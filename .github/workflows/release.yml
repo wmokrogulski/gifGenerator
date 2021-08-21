@@ -57,6 +57,7 @@ jobs:
         
     - name: Build pyinstaller
       run: |
+        ls | echo
         python setup.py
         
     
