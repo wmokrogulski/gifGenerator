@@ -57,7 +57,7 @@ jobs:
         
     - name: Build pyinstaller
       run: |
-        ls | echo
+        ls
         python setup.py
         
     
@@ -81,7 +81,8 @@ jobs:
 
     - name: Build NSIS installer
       run: |
-        makensis /DPRODUCT_VERSION=${{ steps.version.outputs.revision }} setup.nsi
+        makensis setup.nsi
+        # makensis /DPRODUCT_VERSION=${{ steps.version.outputs.revision }} setup.nsi
         
       
     - name: Create GitHub Release
