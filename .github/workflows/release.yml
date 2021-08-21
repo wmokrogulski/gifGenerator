@@ -61,6 +61,16 @@ jobs:
         python setup.py
         
     
+    - name: Install NSIS
+      run: |
+        sudo apt-get install nsis
+
+    - name: Build NSIS installer
+      run: |
+        makensis setup.nsi
+        # makensis /DPRODUCT_VERSION=${{ steps.version.outputs.revision }} setup.nsi
+        
+    
         
     - name: Zip Release
       # You may pin to the exact commit or the version.
@@ -74,15 +84,6 @@ jobs:
         # Working directory before zipping
         # directory: # optional, default is .
         
-
-#     - name: Install NSIS
-#       run: |
-#         sudo apt-get install nsis
-
-#     - name: Build NSIS installer
-#       run: |
-#         makensis setup.nsi
-#         # makensis /DPRODUCT_VERSION=${{ steps.version.outputs.revision }} setup.nsi
         
       
     - name: Create GitHub Release
