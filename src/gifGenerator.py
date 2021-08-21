@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 POSITION = (50, 90)  # %
 TEXT_COLOR = (255, 255, 255)
-TEXT_FONT = 'calm_down.otf'
+TEXT_FONT = '../calm_down.otf'
 TEXT_SIZE = 50
 PATH_TO_FFMPEG = 'C:/ffmpeg/bin/ffmpeg.exe'
 
@@ -13,7 +13,8 @@ PATH_TO_FFMPEG = 'C:/ffmpeg/bin/ffmpeg.exe'
 class GifGenerator:
     def __init__(self):
         self.frames = []
-        self.font = ImageFont.truetype(TEXT_FONT, TEXT_SIZE)
+        # self.font = ImageFont.truetype(TEXT_FONT, TEXT_SIZE)
+        self.font = ImageFont.truetype('arial.ttf', TEXT_SIZE)
         self.text_position = POSITION
 
     def setTextPosition(self, position):
