@@ -4,10 +4,10 @@
 block_cipher = None
 
 
-a = Analysis(['gifFromFrames.py'],
+a = Analysis(['src\\gifFromFrames.py'],
              pathex=['C:\\Users\\mokro\\PycharmProjects\\gifGenerator'],
              binaries=[],
-             datas=[('calm_down.otf', 'calm_down.otf')],
+             datas=[('fonts/calm_down.otf', 'fonts/calm_down.otf')],
              hiddenimports=[],
              hookspath=[],
              hooksconfig={},
@@ -37,4 +37,4 @@ exe = EXE(pyz,
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,
-          entitlements_file=None , icon='icon.ico')
+          entitlements_file=None , icon='icons\\icon.ico')
