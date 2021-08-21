@@ -4,8 +4,8 @@
 block_cipher = None
 
 
-a = Analysis(['src\\gifFromVideo.py'],
-             pathex=['C:\\Users\\mokro\\PycharmProjects\\gifGenerator'],
+a = Analysis(['src/gifFromVideo.py'],
+             pathex=['C:/Users/mokro/PycharmProjects/gifGenerator'],
              binaries=[('ffmpeg/ffmpeg.exe', 'ffmpeg/ffmpeg.exe')],
              datas=[],
              hiddenimports=[],
@@ -37,4 +37,4 @@ exe = EXE(pyz,
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,
-          entitlements_file=None , icon='icons\\icon.ico')
+          entitlements_file=None , icon='icons/icon.ico')
