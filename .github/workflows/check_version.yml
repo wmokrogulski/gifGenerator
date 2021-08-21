@@ -20,6 +20,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:  
+            fetch-depth: 0  
 
       - name: Version
         id: version
@@ -33,7 +35,8 @@ jobs:
           # test-branch: test# optional, default is test
           # The branch to use for dev deployments. Default is develop
           # dev-branch: develop# optional, default is develop
-      - run: |
-        echo ${{ steps.version.outputs.revision }} > version.txt
+      - name: to file
+        run:  ${{ steps.version.outputs.revision }} > version.txt
+       
         
   
