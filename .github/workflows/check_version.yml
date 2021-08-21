@@ -34,4 +34,6 @@ jobs:
           # The branch to use for dev deployments. Default is develop
           # dev-branch: develop# optional, default is develop
       - run: |
-        echo ${{ steps.version.revision }} > version.txt
+        echo ${{ steps.version.outputs.revision }} > version.txt
+        
+  
