@@ -75,14 +75,14 @@ jobs:
         # directory: # optional, default is .
         
 
-    - name: Install NSIS
-      run: |
-        sudo apt-get install nsis
+#     - name: Install NSIS
+#       run: |
+#         sudo apt-get install nsis
 
-    - name: Build NSIS installer
-      run: |
-        makensis setup.nsi
-        # makensis /DPRODUCT_VERSION=${{ steps.version.outputs.revision }} setup.nsi
+#     - name: Build NSIS installer
+#       run: |
+#         makensis setup.nsi
+#         # makensis /DPRODUCT_VERSION=${{ steps.version.outputs.revision }} setup.nsi
         
       
     - name: Create GitHub Release
@@ -101,10 +101,10 @@ jobs:
         asset_path: release.zip
         asset_name: gifGeneratorv${{  steps.version.outputs.revision }}.zip
         
-    - uses: shogo82148/actions-upload-release-asset@v1
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: setup.exe
+#     - uses: shogo82148/actions-upload-release-asset@v1
+#       with:
+#         upload_url: ${{ steps.create_release.outputs.upload_url }}
+#         asset_path: setup.exe
         
         
     
