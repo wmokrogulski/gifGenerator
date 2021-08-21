@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+/dist/
+/build/
+/venv/
+/.idea/
+/setup.exe
+=======
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +134,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+>>>>>>> 207b4f8fbb0946713cf72d2c7f3429d4946c8527
