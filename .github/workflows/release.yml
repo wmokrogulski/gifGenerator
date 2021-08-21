@@ -57,7 +57,6 @@ jobs:
         
     - name: Build pyinstaller
       run: |
-        ls
         python setup.py
         
     
@@ -67,6 +66,7 @@ jobs:
 
     - name: Build NSIS installer
       run: |
+        ls -la
         makensis setup.nsi
         # makensis /DPRODUCT_VERSION=${{ steps.version.outputs.revision }} setup.nsi
         
