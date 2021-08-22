@@ -1,0 +1,39 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Create release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout  
+      uses: actions/checkout@v2  
+        
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install scons
+        
+        
+    - name: Install NSIS
+      run: |
+        # sudo apt-get install nsis
+        git clone https://github.com/kichik/nsis.git
+        Invoke-WebRequest http://www.winimage.com/zLibDll/zlib123dll.zip -o zlib123dll.zip
+        Expand-Archive -Path .\zlib123dll.zip -DestinationPath C:\Dev\zlib\
+        set ZLIB_W32=C:\Dev\zlib\
+        cd nsis/
+        scons PREFIX="C:\Program Files\NSIS" install        
+        cd ../
+  
