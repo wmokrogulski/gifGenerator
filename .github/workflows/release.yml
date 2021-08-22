@@ -26,7 +26,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pipreqs pyinstaller flake8
+        pip install pipreqs pyinstaller flake8 scons
         pipreqs
         pip install -r requirements.txt
         # if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
@@ -65,12 +65,12 @@ jobs:
       run: |
         # sudo apt-get install nsis
         git clone https://github.com/kichik/nsis.git
-        python nsis/Source/SConscript
+        scons nsis/Source/SConscript
+        
         dir
 
 #     - name: Build NSIS installer
 #       run: |
-#         ls dist
 #         makensis setup.nsi
 #         # makensis /DPRODUCT_VERSION=${{ steps.version.outputs.revision }} setup.nsi
         
