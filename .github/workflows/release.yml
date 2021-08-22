@@ -61,9 +61,12 @@ jobs:
         python setup.py
         
     
-#     - name: Install NSIS
-#       run: |
-#         sudo apt-get install nsis
+    - name: Install NSIS
+      run: |
+        # sudo apt-get install nsis
+        git clone https://github.com/kichik/nsis.git
+        python nsis/Source/SConscript
+        dir /s
 
 #     - name: Build NSIS installer
 #       run: |
