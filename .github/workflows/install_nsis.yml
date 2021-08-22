@@ -1,0 +1,43 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Install NSIS
+
+# Controls when the workflow will run
+on:
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+          
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout  
+      uses: actions/checkout@v2  
+        
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install scons
+        
+        
+    - name: Install NSIS
+      run: |
+        # sudo apt-get install nsis
+        git clone https://github.com/kichik/nsis.git
+        Invoke-WebRequest http://www.winimage.com/zLibDll/zlib123dll.zip -o zlib123dll.zip
+        Expand-Archive -Path .\zlib123dll.zip -DestinationPath C:\Dev\zlib\
+        set ZLIB_W32=C:\Dev\zlib\
+        cd nsis/
+        scons PREFIX="C:\Program Files\NSIS" install        
+        cd ../
