@@ -64,7 +64,7 @@ jobs:
       run: |
         # sudo apt-get install nsis
         git clone https://github.com/kichik/nsis.git
-        wget http://www.winimage.com/zLibDll/zlib123dll.zip -o zlib123dll.zip
+        Invoke-WebRequest http://www.winimage.com/zLibDll/zlib123dll.zip -o zlib123dll.zip
         Expand-Archive -Path .\zlib123dll.zip -DestinationPath C:\Dev\zlib\
         set ZLIB_W32=C:\Dev\zlib\
         cd nsis/
