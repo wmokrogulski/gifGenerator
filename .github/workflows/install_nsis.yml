@@ -35,7 +35,7 @@ jobs:
       run: |
         # sudo apt-get install nsis
         git clone https://github.com/kichik/nsis.git
-        Invoke-WebRequest Invoke-WebRequest "https://downloads.sourceforge.net/project/gnuwin32/zlib/1.2.3/zlib-1.2.3-bin.zip?ts=gAAAAABhIk-iqRs1LF0bwcyKZjA2aI1bc92c9c0WnjOHc7RP-M42tXaD287f7u_NXLrYCLbeKUzgk17ZZnjbAnKs78fSaEU4sA%3D%3D&r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fgnuwin32%2Ffiles%2Fzlib%2F1.2.3%2Fzlib-1.2.3-bin.zip%2Fdownload%3Fuse_mirror%3Ddeac-fra%26download%3D" -o zlib123dll.zip
+        Invoke-WebRequest "https://downloads.sourceforge.net/project/gnuwin32/zlib/1.2.3/zlib-1.2.3-bin.zip?ts=gAAAAABhIk-iqRs1LF0bwcyKZjA2aI1bc92c9c0WnjOHc7RP-M42tXaD287f7u_NXLrYCLbeKUzgk17ZZnjbAnKs78fSaEU4sA%3D%3D&r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fgnuwin32%2Ffiles%2Fzlib%2F1.2.3%2Fzlib-1.2.3-bin.zip%2Fdownload%3Fuse_mirror%3Ddeac-fra%26download%3D" -o zlib123dll.zip
         Expand-Archive -Path .\zlib123dll.zip -DestinationPath C:\Dev\zlib\
         cd nsis/
         dir C:\Dev\zlib
