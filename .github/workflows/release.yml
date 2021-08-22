@@ -61,15 +61,15 @@ jobs:
         python setup.py
         
     
-    - name: Install NSIS
-      run: |
-        sudo apt-get install nsis
+#     - name: Install NSIS
+#       run: |
+#         sudo apt-get install nsis
 
-    - name: Build NSIS installer
-      run: |
-        ls dist
-        makensis setup.nsi
-        # makensis /DPRODUCT_VERSION=${{ steps.version.outputs.revision }} setup.nsi
+#     - name: Build NSIS installer
+#       run: |
+#         ls dist
+#         makensis setup.nsi
+#         # makensis /DPRODUCT_VERSION=${{ steps.version.outputs.revision }} setup.nsi
         
     
         
