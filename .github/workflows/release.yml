@@ -66,7 +66,7 @@ jobs:
         # sudo apt-get install nsis
         git clone https://github.com/kichik/nsis.git
         python nsis/Source/SConscript
-        dir /s
+        dir
 
 #     - name: Build NSIS installer
 #       run: |
