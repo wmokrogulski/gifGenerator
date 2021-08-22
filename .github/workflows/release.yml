@@ -60,20 +60,21 @@ jobs:
       run: |
         python setup.py
         
-    
     - name: Install NSIS
       run: |
         # sudo apt-get install nsis
         git clone https://github.com/kichik/nsis.git
+        wget http://www.winimage.com/zLibDll/zlib123dll.zip -o zlib123dll.zip
+        Expand-Archive -Path .\zlib123dll.zip -DestinationPath C:\Dev\zlib\
+        set ZLIB_W32=C:\Dev\zlib\
         cd nsis/
-        scons .        
-        dir
+        scons PREFIX="C:\Program Files\NSIS" install        
         cd ../
 
-#     - name: Build NSIS installer
-#       run: |
-#         makensis setup.nsi
-#         # makensis /DPRODUCT_VERSION=${{ steps.version.outputs.revision }} setup.nsi
+    - name: Build NSIS installer
+      run: |
+        makensis setup.nsi
+        # makensis /DPRODUCT_VERSION=${{ steps.version.outputs.revision }} setup.nsi
         
     
         
