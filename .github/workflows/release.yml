@@ -65,10 +65,8 @@ jobs:
       run: |
         # sudo apt-get install nsis
         git clone https://github.com/kichik/nsis.git
-        cd nsis/Source/
         scons .        
         dir
-        cd ../../
 
 #     - name: Build NSIS installer
 #       run: |
