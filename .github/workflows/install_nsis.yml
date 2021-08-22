@@ -38,7 +38,7 @@ jobs:
         Invoke-WebRequest http://www.winimage.com/zLibDll/zlib123dll.zip -o zlib123dll.zip
         Expand-Archive -Path .\zlib123dll.zip -DestinationPath C:\Dev\zlib\
         cd nsis/
-        set ZLIB_W32=C:\Dev\zlib
-        dir C:\Dev\zlib
+        set ZLIB_W32=C:\Dev\zlib\dll32
+        dir C:\Dev\zlib\dll32
         scons PREFIX="C:\Program Files\NSIS" install        
         cd ../
