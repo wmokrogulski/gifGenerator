@@ -39,7 +39,6 @@ jobs:
         Expand-Archive -Path .\zlib123dll.zip -DestinationPath C:\Dev\zlib\
         cd nsis/
         dir C:\Dev\zlib\dll32
-        Set-Variable -Name ZLIB_W32 -Value C:\Dev\zlib
-        Get-Variable -Name ZLIB_W32
+        $Env:ZLIB_W32="C:\Dev\zlib"
         scons PREFIX="C:\Program Files\NSIS" install        
         cd ../
