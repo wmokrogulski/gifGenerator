@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "Gif Generator"
-; !define PRODUCT_VERSION "1.0"
+!define PRODUCT_VERSION "1.0.0"
 !define PRODUCT_PUBLISHER "Wawrzyniec Mokrogulski"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\gifFromFrames.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
